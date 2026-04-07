@@ -6,10 +6,6 @@ const ATTACK_TYPES = [{
   label: "Jackpotting",
   cat: "Cyber-Physical"
 }, {
-  value: "dma_pcie",
-  label: "DMA/PCIe attack",
-  cat: "Cyber"
-}, {
   value: "black_box",
   label: "Black box attack",
   cat: "Cyber-Physical"
@@ -2319,3 +2315,8 @@ function IconExport() {
 }
 
 /* ── pages ── */
+
+function AttacksListPage({
+  attacks,
+  onSelect,
+  onNew

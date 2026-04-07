@@ -1,7 +1,3 @@
-function AttackDetailPage({
-  attack,
-  onBack,
-  onUpdate
 }) {
   const [tab, setTab] = useState("incident");
   const tabs = [{
@@ -1477,6 +1473,38 @@ function App() {
     href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
     rel: "stylesheet"
   }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "12px 28px",
+      borderBottom: "1px solid #1e2028",
+      background: "#0e1117",
+      position: "sticky",
+      top: 0,
+      zIndex: 50
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "https://cdn.prod.website-files.com/633edbba35022b924b3e870b/69d4628b063c04e568af298f_logo_brinks_white.png",
+    alt: "Brinks",
+    style: {
+      height: "22px",
+      objectFit: "contain"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "1px",
+      height: "24px",
+      background: "#2a2c36"
+    }
+  }), /*#__PURE__*/React.createElement("img", {
+    src: "https://cdn.prod.website-files.com/633edbba35022b924b3e870b/699e06c256d5345a24deda9b_nqub_logo%204.svg",
+    alt: "nq\u016Bb",
+    style: {
+      height: "20px",
+      objectFit: "contain"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
     className: "gp-main"
   }, page === "list" && /*#__PURE__*/React.createElement(AttacksListPage, {
     attacks: data.attacks,

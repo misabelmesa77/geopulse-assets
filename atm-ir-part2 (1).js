@@ -1,7 +1,3 @@
-function AttacksListPage({
-  attacks,
-  onSelect,
-  onNew
 }) {
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("");
@@ -50,7 +46,7 @@ function AttacksListPage({
     onChange: e => setFilterType(e.target.value)
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "All types"), ATTACK_TYPES.map(t => /*#__PURE__*/React.createElement("option", {
+  }, "Select type"), ATTACK_TYPES.map(t => /*#__PURE__*/React.createElement("option", {
     key: t.value,
     value: t.value
   }, t.label))), /*#__PURE__*/React.createElement("select", {
@@ -62,7 +58,7 @@ function AttacksListPage({
     onChange: e => setFilterRegion(e.target.value)
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "All regions"), regions.map(r => /*#__PURE__*/React.createElement("option", {
+  }, "Select region"), regions.map(r => /*#__PURE__*/React.createElement("option", {
     key: r,
     value: r
   }, r))), /*#__PURE__*/React.createElement("select", {
@@ -74,7 +70,7 @@ function AttacksListPage({
     onChange: e => setFilterStatus(e.target.value)
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "All statuses"), STATUSES.map(s => /*#__PURE__*/React.createElement("option", {
+  }, "Select status"), STATUSES.map(s => /*#__PURE__*/React.createElement("option", {
     key: s,
     value: s
   }, s)))), filtered.length === 0 ? /*#__PURE__*/React.createElement("div", {
@@ -636,3 +632,7 @@ function AddAttackPage({
     disabled: !form.terminalNumber || !form.type || !form.date || !form.description
   }, "Create attack record")));
 }
+function AttackDetailPage({
+  attack,
+  onBack,
+  onUpdate
