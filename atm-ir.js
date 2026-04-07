@@ -2364,7 +2364,7 @@ function AttacksListPage({
     }
   })), /*#__PURE__*/React.createElement("h1", {
     style: {
-      fontSize: "clamp(32px, 5vw, 64px)",
+      fontSize: "clamp(16px, 2.5vw, 32px)",
       fontWeight: 700,
       color: "#f56c26",
       margin: "0 0 4px",
