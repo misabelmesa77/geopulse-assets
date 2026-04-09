@@ -25,7 +25,7 @@ const ATTACK_TYPES = [{
 const CATEGORIES = ["Cyber", "Physical", "Cyber-Physical"];
 const MAGNITUDES = ["Low", "Medium", "High", "Critical"];
 const OUTCOMES = ["Prevented", "Successful", "Under investigation"];
-const STATUSES = ["Open", "Active", "Closed"];
+const STATUSES = ["Open", "In progress", "Closed"];
 const TIERS = ["Tier 1 — Fully compliant", "Tier 2 — Compensating controls", "Tier 3 — Non-compliant"];
 const TEAMS = ["Brinks", "ACG", "Burroughs", "Cennox"];
 const TEAM_MEMBERS = ["Victor Smith", "Tony Mercer", "Jim Reeder", "Byron Lubbe", "Susan Nicholls", "Kyle Suter", "David Barrowman"];
@@ -150,7 +150,7 @@ const STATUS_STYLE = {
     bg: "#1a2e40",
     text: "#5eb8ff"
   },
-  Active: {
+  "In progress": {
     bg: "#3a2a0a",
     text: "#f0c050"
   },
@@ -222,23 +222,23 @@ const SAMPLE_ATTACKS = [{
   "result": "Pending remediation. Unit offline. Insurance claim initiated.",
   "learnings": "Response time exceeded target at 2h54m. CRT notification effective. LEO script used successfully. PH-003 gap identified — no bollards present.",
   "activityLog": [{
-    "time": "04:57 AM",
+    "time": "Feb 17 04:57 AM",
     "action": "Alert triggered",
     "detail": "Cabinet door open — monitoring system"
   }, {
-    "time": "05:01 AM",
+    "time": "Feb 17 05:01 AM",
     "action": "CRT notified",
     "detail": "Victor Smith, Byron Lubbe, Tony Mercer, Jim Reeder, Susan Nicholls"
   }, {
-    "time": "05:02 AM",
+    "time": "Feb 17 05:02 AM",
     "action": "Tech dispatched",
     "detail": "David Barrowman — ETA 3 hours"
   }, {
-    "time": "05:08 AM",
+    "time": "Feb 17 05:08 AM",
     "action": "LEO contacted",
     "detail": "Durant PD — case #211166 assigned"
   }, {
-    "time": "07:56 AM",
+    "time": "Feb 17 07:56 AM",
     "action": "Tech on-site",
     "detail": "David Barrowman arrived, began assessment"
   }],
@@ -358,19 +358,19 @@ const SAMPLE_ATTACKS = [{
   "result": "Unit restored to service with patched BIOS. Criminal hard drive in evidence custody.",
   "learnings": "Hard drive swap attack succeeded due to missing BitLocker (SW-002) and no application whitelisting (SW-003). Dispenser communication was not encrypted (SW-010).",
   "activityLog": [{
-    "time": "05:32 PM",
+    "time": "Jan 28 05:32 PM",
     "action": "Anomaly detected",
     "detail": "Multiple dispenses without valid transactions"
   }, {
-    "time": "05:35 PM",
+    "time": "Jan 28 05:35 PM",
     "action": "Unit offline",
     "detail": "Remote shutdown initiated"
   }, {
-    "time": "06:10 PM",
+    "time": "Jan 28 06:10 PM",
     "action": "Tech dispatched",
     "detail": "Curtis — Brinks"
   }, {
-    "time": "08:45 PM",
+    "time": "Jan 28 08:45 PM",
     "action": "Hard drive recovered",
     "detail": "Criminal HDD seized as evidence"
   }],
@@ -476,31 +476,31 @@ const SAMPLE_ATTACKS = [{
   "result": "Core destroyed, cash lost. Unit damaged but repairable. Cennox dispatched but no escalation despite clear evidence of break-in.",
   "learnings": "BIC email notifications broken since 9/17 — 17 days before attack. BIC texts configured to send only after 8:00 CST, no real-time overnight alerts. USB alerts routed to Retail not FICOE. Cennox treated as standard incident, no escalation. No E2E theft process existed for FI units.",
   "activityLog": [{
-    "time": "05:19 PM",
+    "time": "Oct 4 05:19 PM",
     "action": "Fascia opened",
     "detail": "Front fascia door opened — CST"
   }, {
-    "time": "05:37 PM",
+    "time": "Oct 4 05:37 PM",
     "action": "Power failure",
     "detail": "Power lost — CST"
   }, {
-    "time": "07:44 PM",
+    "time": "Oct 4 07:44 PM",
     "action": "Router down",
     "detail": "Network router down 7:44-8:00 PM CST"
   }, {
-    "time": "08:42 PM",
+    "time": "Oct 4 08:42 PM",
     "action": "BIC USB alert",
     "detail": "Alert sent to Retail (Chad, Jim) — not FICOE"
   }, {
-    "time": "10:16 PM",
+    "time": "Oct 4 10:16 PM",
     "action": "Power failed again",
     "detail": "Cassettes emptied by 10:27:46"
   }, {
-    "time": "12:12 PM",
+    "time": "Oct 4 12:12 PM",
     "action": "Dispatch placed",
     "detail": "Andrew manually placed ticket 10/5"
   }, {
-    "time": "04:24 PM",
+    "time": "Oct 4 04:24 PM",
     "action": "Tech onsite",
     "detail": "Confirmed out of service — no conversation with FICOE"
   }],
@@ -581,19 +581,19 @@ const SAMPLE_ATTACKS = [{
   "result": "Core destroyed but no significant cash loss. Thumb drive and mobile hotspot recovered as evidence. Black box attack setup confirmed.",
   "learnings": "Mobile hotspot + thumb drive is the black box attack signature. Cennox tech observed thumb drive in USB and clear evidence of break-in but did not escalate — treated as standard incident because 'it was Sunday.' Note: $1,380 appears in the 2025 vandalism tracker for PI200112 on 10/5/25 — likely represents device/equipment damage cost, not cash loss. Needs confirmation.",
   "activityLog": [{
-    "time": "09:42 PM",
+    "time": "Oct 5 09:42 PM",
     "action": "Comms lost",
     "detail": "Network unplugged by attackers"
   }, {
-    "time": "11:10 PM",
+    "time": "Oct 5 11:10 PM",
     "action": "BIC text alert",
     "detail": "USB alert — CST"
   }, {
-    "time": "08:47 AM",
+    "time": "Oct 5 08:47 AM",
     "action": "Dispatch placed",
     "detail": "Manual ticket 10/5"
   }, {
-    "time": "12:12 PM",
+    "time": "Oct 5 12:12 PM",
     "action": "Tech onsite",
     "detail": "Confirmed OOS, thumb drive + hotspot found"
   }],
@@ -674,23 +674,23 @@ const SAMPLE_ATTACKS = [{
   "result": "Core destroyed, cash lost. Fascia door and lock damaged. Cassettes confirmed empty on second tech visit.",
   "learnings": "Tech arrived 10/5 but left because no power and could not open fascia — no escalation. Lost another day. Second visit 10/6 confirmed full loss. No conversation with FICOE during either visit.",
   "activityLog": [{
-    "time": "11:23 PM",
+    "time": "Oct 5 11:23 PM",
     "action": "Supervisor mode",
     "detail": "Door open — LAN unplugged by attackers"
   }, {
-    "time": "11:49 PM",
+    "time": "Oct 5 11:49 PM",
     "action": "BIC text alert",
     "detail": "Alert sent"
   }, {
-    "time": "08:46 AM",
+    "time": "Oct 5 08:46 AM",
     "action": "Dispatch placed",
     "detail": "Andrew manual dispatch 10/5"
   }, {
-    "time": "12:26 PM",
+    "time": "Oct 5 12:26 PM",
     "action": "Tech onsite",
     "detail": "No power, could not open fascia — left site"
   }, {
-    "time": "09:36 AM",
+    "time": "Oct 5 09:36 AM",
     "action": "Tech returned",
     "detail": "10/6 — confirmed core destroyed, cassettes empty"
   }],
@@ -771,15 +771,15 @@ const SAMPLE_ATTACKS = [{
   "result": "Cash lost. Emergency response faster than Topeka cluster due to lessons learned, but Cennox dispatch failures added delays.",
   "learnings": "LEO dispatch was immediate — improvement over Topeka response. However Cennox had no emergency dispatch process. Pre-arranged tech unavailable, replacement lacked software. Follow-up fell through — another day lost.",
   "activityLog": [{
-    "time": "04:16 AM",
+    "time": "Oct 8 04:16 AM",
     "action": "Attack detected",
     "detail": "ROC notified FICOE immediately"
   }, {
-    "time": "04:20 AM",
+    "time": "Oct 8 04:20 AM",
     "action": "LEO dispatched",
     "detail": "Immediate dispatch — lesson from Topeka cluster"
   }, {
-    "time": "11:57 AM",
+    "time": "Oct 8 11:57 AM",
     "action": "Tech onsite",
     "detail": "Cennox — delayed due to no emergency dispatch process"
   }],
@@ -1091,23 +1091,23 @@ const SAMPLE_ATTACKS = [{
   "result": "Cash lost. Unit damaged. BIC agent updated. Daily cassette removal implemented as interim measure.",
   "learnings": "No BIC communication for 585 days — unit was effectively unmonitored. No alarm in top hat (alarm only in vault). TPM chip removed indicating physical access to core. Bank owns cash and machines but customer insures. Led to vulnerability assessment of all VB island units.",
   "activityLog": [{
-    "time": "12:18 AM",
+    "time": "Dec 15 12:18 AM",
     "action": "CDS closed status",
     "detail": "Reported — no alarm triggered"
   }, {
-    "time": "08:00 AM",
+    "time": "Dec 15 08:00 AM",
     "action": "Dispatch queued",
     "detail": "Daily check-in triggered dispatch"
   }, {
-    "time": "08:45 AM",
+    "time": "Dec 15 08:45 AM",
     "action": "Tech onsite",
     "detail": "David Barrowman arrived"
   }, {
-    "time": "03:45 PM",
+    "time": "Dec 15 03:45 PM",
     "action": "Secret Service",
     "detail": "Notified"
   }, {
-    "time": "04:50 PM",
+    "time": "Dec 15 04:50 PM",
     "action": "Actions documented",
     "detail": "Customer contacted, BIC updated, vulnerability assessment initiated"
   }],
@@ -1351,31 +1351,31 @@ const SAMPLE_ATTACKS = [{
   "result": "Cash lost. Unit to be replaced. Cash loads reduced at proximal units P424033 and Union Square.",
   "learnings": "No high security door. Police response fast (3 min) but thieves faster — gone in 3 minutes. 100K load canceled by weather saved potential $100K additional loss. Contract language contradicts on liability — under legal review.",
   "activityLog": [{
-    "time": "02:42 AM",
+    "time": "Jan 30 02:42 AM",
     "action": "No RMM from BIC",
     "detail": "First indication"
   }, {
-    "time": "02:47 AM",
+    "time": "Jan 30 02:47 AM",
     "action": "Cash reject bin removed",
     "detail": "CDS report"
   }, {
-    "time": "02:48 AM",
+    "time": "Jan 30 02:48 AM",
     "action": "Alarm triggered",
     "detail": "Police responded in 3 mins"
   }, {
-    "time": "02:51 AM",
+    "time": "Jan 30 02:51 AM",
     "action": "Thieves gone",
     "detail": "Total time on site ~3 minutes"
   }, {
-    "time": "08:20 AM",
+    "time": "Jan 30 08:20 AM",
     "action": "Bank contacted Rowdy",
     "detail": ""
   }, {
-    "time": "08:35 AM",
+    "time": "Jan 30 08:35 AM",
     "action": "Rowdy headed to site",
     "detail": ""
   }, {
-    "time": "12:54 PM",
+    "time": "Jan 30 12:54 PM",
     "action": "ATM secured",
     "detail": "Pickup scheduled Monday"
   }],
@@ -1465,19 +1465,19 @@ const SAMPLE_ATTACKS = [{
   "result": "Partial cash loss — thieves interrupted by bank rep. $7,000 lost, $29,120 remaining. Reduced cash levels in proximal client ATMs.",
   "learnings": "Monitoring team confusion on first alarm cost critical response time — 1.5 hours between first alarm and second alarm with no LEO dispatch either time. Bank rep arrival at 3:55 AM (3.5 hours after first alarm) finally interrupted the attack. No cabinet door open BIC alert despite physical intrusion.",
   "activityLog": [{
-    "time": "12:30 AM",
+    "time": "Feb 4 12:30 AM",
     "action": "1st alarm",
     "detail": "Monitoring confused — no LEO dispatched"
   }, {
-    "time": "01:53 AM",
+    "time": "Feb 4 01:53 AM",
     "action": "2nd alarm",
     "detail": "Still no LEO dispatched"
   }, {
-    "time": "03:55 AM",
+    "time": "Feb 4 03:55 AM",
     "action": "Bank rep on site",
     "detail": "Caused thieves to leave"
   }, {
-    "time": "05:00 AM",
+    "time": "Feb 4 05:00 AM",
     "action": "Phone report",
     "detail": "Called 855-260-8568, they said they would report"
   }],
@@ -1563,19 +1563,19 @@ const SAMPLE_ATTACKS = [{
   "result": "Cash lost. High security door upgrades deployed. Unit to be replaced.",
   "learnings": "Second First Bank WF attack in 6 days (Burkburnett was 1/30). No high security door. $110K loaded just 2 days before attack. Contradicting contract language on liability — same issue as P447775.",
   "activityLog": [{
-    "time": "03:05 AM",
+    "time": "Feb 5 03:05 AM",
     "action": "Alarm triggered",
     "detail": "Thieves gone within 3 minutes — CST"
   }, {
-    "time": "03:50 AM",
+    "time": "Feb 5 03:50 AM",
     "action": "BIC safe door alert",
     "detail": "EST"
   }, {
-    "time": "08:18 AM",
+    "time": "Feb 5 08:18 AM",
     "action": "Bank contacted Rowdy",
     "detail": "EST"
   }, {
-    "time": "08:21 AM",
+    "time": "Feb 5 08:21 AM",
     "action": "Rowdy alerted Mercer",
     "detail": "A. Mercer notified"
   }],
@@ -1667,15 +1667,15 @@ const SAMPLE_ATTACKS = [{
   "result": "No cash loss. Physical damage to SDM and 16 amp switch. Unit offline. No dispatch or inspection completed.",
   "learnings": "ACTION NEEDED: Chase down terminal ID. Rick's shorthand uses last 3 digits of terminal IDs (107=PI200107, 108=PI200108, 103=PI200112). '106' suggests PI200106 but no such terminal exists in fleet CSV — may be a removed terminal, a different internal ID, or a typo. Confirm with Rick or Byron.",
   "activityLog": [{
-    "time": "Unknown",
+    "time": "Sep 29 —",
     "action": "USB alert (29th)",
     "detail": "BIC USB alert — September 29, 2025. Five days before coordinated Oct 4 attacks."
   }, {
-    "time": "Unknown",
+    "time": "Sep 29 —",
     "action": "Bill jam",
     "detail": "SDM damaged, 16 amp switch damaged"
   }, {
-    "time": "Unknown",
+    "time": "Sep 29 —",
     "action": "Unit offline",
     "detail": "No dispatch, no pictures, no inspection"
   }],
@@ -2997,7 +2997,7 @@ function AttackDetailPage({
   const [tab, setTab] = useState("incident");
   const tabs = [{
     id: "incident",
-    label: "Incident"
+    label: "Record"
   }, {
     id: "response",
     label: "Response"
@@ -3086,9 +3086,9 @@ function AttackDetailPage({
 const TASK_STATUSES = ["Pending", "In progress", "Completed"];
 const TASK_STATUS_STYLE = {
   "Pending": {
-    bg: "#1e2028",
-    text: "#6b6b76",
-    border: "#2a2c36"
+    bg: "#2a2c36",
+    text: "#f0f0f2",
+    border: "#3a3c48"
   },
   "In progress": {
     bg: "#3a2a0a",
@@ -3114,6 +3114,7 @@ function ProcessTaskTracker({
 }) {
   const [newText, setNewText] = useState("");
   const [newStatus, setNewStatus] = useState("Pending");
+  const [newAssignee, setNewAssignee] = useState("");
   const updateTask = (i, field, val) => {
     const next = tasks.map((t, idx) => idx === i ? {
       ...t,
@@ -3126,10 +3127,12 @@ function ProcessTaskTracker({
     if (!newText.trim()) return;
     onChange([...tasks, {
       text: newText.trim(),
-      status: newStatus
+      status: newStatus,
+      assignee: newAssignee
     }]);
     setNewText("");
     setNewStatus("Pending");
+    setNewAssignee("");
   };
   const counts = TASK_STATUSES.reduce((acc, s) => {
     acc[s] = tasks.filter(t => t.status === s).length;
@@ -3173,6 +3176,21 @@ function ProcessTaskTracker({
       width: "130px",
       flexShrink: 0,
       fontSize: "11px",
+      padding: "4px 8px"
+    },
+    value: task.assignee || "",
+    onChange: e => updateTask(i, "assignee", e.target.value)
+  }, /*#__PURE__*/React.createElement("option", {
+    value: ""
+  }, "Unassigned"), TEAM_MEMBERS.map(m => /*#__PURE__*/React.createElement("option", {
+    key: m,
+    value: m
+  }, m))), /*#__PURE__*/React.createElement("select", {
+    style: {
+      ...S.select,
+      width: "120px",
+      flexShrink: 0,
+      fontSize: "11px",
       padding: "4px 8px",
       background: TASK_STATUS_STYLE[task.status].bg,
       color: TASK_STATUS_STYLE[task.status].text,
@@ -3206,12 +3224,13 @@ function ProcessTaskTracker({
       background: "#16181f",
       borderRadius: "6px",
       border: "1px dashed #2a2c36",
-      alignItems: "center"
+      alignItems: "center",
+      flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("input", {
     style: {
       ...S.input,
-      flex: 1,
+      flex: "1 1 140px",
       fontSize: "12px"
     },
     placeholder: "New task...",
@@ -3223,8 +3242,21 @@ function ProcessTaskTracker({
   }), /*#__PURE__*/React.createElement("select", {
     style: {
       ...S.select,
-      width: "130px",
-      flexShrink: 0,
+      flex: "0 0 130px",
+      fontSize: "11px",
+      padding: "4px 8px"
+    },
+    value: newAssignee,
+    onChange: e => setNewAssignee(e.target.value)
+  }, /*#__PURE__*/React.createElement("option", {
+    value: ""
+  }, "Unassigned"), TEAM_MEMBERS.map(m => /*#__PURE__*/React.createElement("option", {
+    key: m,
+    value: m
+  }, m))), /*#__PURE__*/React.createElement("select", {
+    style: {
+      ...S.select,
+      flex: "0 0 120px",
       fontSize: "11px",
       padding: "4px 8px",
       background: TASK_STATUS_STYLE[newStatus].bg,
@@ -3785,10 +3817,19 @@ function ResponseTab({
   };
   const addLogEntry = () => {
     if (!newLogEntry.time || !newLogEntry.action) return;
+    const d = new Date(newLogEntry.time);
+    const formatted = d.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric"
+    }) + " " + d.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
     onUpdate({
       ...a,
       activityLog: [...(a.activityLog || []), {
-        ...newLogEntry
+        ...newLogEntry,
+        time: formatted
       }]
     });
     setNewLogEntry({
@@ -3913,15 +3954,16 @@ function ResponseTab({
       background: "#16181f",
       borderRadius: "6px",
       border: "1px dashed #2a2c36",
-      alignItems: "center"
+      alignItems: "center",
+      flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("input", {
     style: {
       ...S.input,
-      flex: "0 0 80px",
+      flex: "0 0 180px",
       fontSize: "11px"
     },
-    placeholder: "Time",
+    type: "datetime-local",
     value: newLogEntry.time,
     onChange: e => setNewLogEntry(l => ({
       ...l,
